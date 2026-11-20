@@ -1,13 +1,27 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "pyrefly-lsp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Python language server (Pyrefly) for type checking and code intelligence",
   "author": {
     "name": "alessioarcara"
   },
   "license": "MIT",
   "repository": "https://github.com/alessioarcara/claude-pyrefly-lsp",
+  "userConfig": {
+    "typeCheckingMode": {
+      "type": "string",
+      "title": "Type checking mode",
+      "description": "The Pyrefly preset the language server uses in a project that has no Pyrefly config of its own. basic reports few errors and does not infer return types; default infers them and reports more.",
+      "default": "default",
+      "options": [
+        "basic",
+        "legacy",
+        "default",
+        "strict"
+      ]
+    }
+  },
   "lspServers": {
     "pyrefly": {
       "command": "pyrefly",
@@ -20,7 +34,7 @@
       },
       "initializationOptions": {
         "pyrefly": {
-          "typeCheckingMode": "default"
+          "typeCheckingMode": "${user_config.typeCheckingMode}"
         }
       }
     }

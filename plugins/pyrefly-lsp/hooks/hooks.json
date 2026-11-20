@@ -1,0 +1,16 @@
+{
+  "description": "Warns at session start when the pyrefly binary is missing",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/check-pyrefly.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
