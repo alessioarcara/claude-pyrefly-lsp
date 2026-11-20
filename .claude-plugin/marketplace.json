@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "alessioarcara-plugins",
+  "description": "Pyrefly language server plugin for Claude Code",
+  "owner": {
+    "name": "alessioarcara"
+  },
+  "plugins": [
+    {
+      "name": "pyrefly-lsp",
+      "description": "Python language server (Pyrefly) for type checking and code intelligence",
+      "version": "0.1.0",
+      "source": "./plugins/pyrefly-lsp",
+      "category": "development"
+    }
+  ]
+}
